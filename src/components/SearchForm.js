@@ -1,32 +1,23 @@
-import React from 'react'
+import React, { Component } from 'react'
 import IconButton from 'material-ui/IconButton';
-import { reduxForm } from 'redux-form'
-import TextField from 'material-ui/TextField'
+import TextField from 'material-ui/TextField';
+import * as _ from 'lodash';
 
 import SearchIcon from 'material-ui-icons/Search';
 
-let SearchForm = props => {
-  const {handleSubmit} = props
-  return (
-    <form onSubmit={handleSubmit(values => {
-      console.log('val',values)
-      props.search({
-        q: values.searchTerm
-      });
-      })}>
-      <div>
-        <TextField name="searchTerm" floatingLabelText="Search CDS" />
-        <IconButton>
-          <SearchIcon />
-        </IconButton>
-      </div>
-    </form>
-  )
+class SearchForm extends Component {
+
+  render() {
+    return (
+      <TextField
+        id="text-field-controlled"
+        onChange={(event) => {_.debounce(
+          this.props.search({
+            q: event.target.value
+          }), 300)}}
+      />
+    )
+  }
 }
 
-SearchForm = reduxForm({
-  // a unique name for the form
-  form: 'search'
-})(SearchForm)
-
-export default SearchForm
+export default SearchForm;

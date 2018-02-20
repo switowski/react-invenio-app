@@ -33,9 +33,8 @@ export default (state = initialState, action) => {
     }
 }
 
-export const search = (params) => {
+export const search = (params={}) => {
     const URL = 'https://videos.cern.ch/api/records/';
-    console.log(params);
     return dispatch => {
         dispatch({
             type: API_REQUESTED
