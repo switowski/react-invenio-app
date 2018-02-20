@@ -79,14 +79,14 @@ class App extends Component {
               <SearchForm onSubmit={this.submit} />
             </div>
             <div id="react-paginate">
-              <ReactPaginate previousLabel={"previous"}
+              <ReactPaginate previousLabel={"prev"}
                              nextLabel={"next"}
                              breakLabel={"..."}
                              breakClassName={"break-me"}
                              pageCount={10}
                              marginPagesDisplayed={2}
                              pageRangeDisplayed={5}
-                             onPageChange={() => console.log('test')}
+                             onPageChange={(page) => console.log(page)}
                              containerClassName={"pagination"}
                              subContainerClassName={"pages pagination"}
                              activeClassName={"active"} />
@@ -95,7 +95,7 @@ class App extends Component {
               <CountContainer/>
             </div>
             <div id="sorting-configuration">
-              <FormControl className={styles.formControl}>
+              <FormControl style={styles.formControl}>
                 <InputLabel htmlFor="age-simple">Sort</InputLabel>
                 <Select
                   value={""}
@@ -115,7 +115,7 @@ class App extends Component {
               </FormControl>
             </div>
             <div id="direction-configuration">
-              <FormControl className={styles.formControl}>
+              <FormControl style={styles.formControl}>
                 <InputLabel htmlFor="age-simple">Dir</InputLabel>
                 <Select
                   value={""}
