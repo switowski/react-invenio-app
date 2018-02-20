@@ -5,17 +5,6 @@ import TextField from 'material-ui/TextField'
 
 import SearchIcon from 'material-ui-icons/Search';
 
-// Nice Material-UI text field
-const renderTextField = ({input, label, meta: {touched, error}, ...custom}) => (
-  <TextField
-    hintText={label}
-    floatingLabelText={label}
-    errorText={touched && error}
-    {...input}
-    {...custom}
-  />
-)
-
 let SearchForm = props => {
   const { handleSubmit } = props
   return (

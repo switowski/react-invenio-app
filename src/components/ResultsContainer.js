@@ -6,7 +6,8 @@ import Results from './Results';
 import { search } from '../modules/reducers/searchReducer';
 
 const mapStateToProps = state => ({
-    results: state.search.results
+    results: state.search.results,
+    isFetching: state.search.isFetching
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({

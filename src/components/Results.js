@@ -29,11 +29,15 @@ class Results extends Component {
         title: video.metadata.title.title
       }
     })
-    return (
+    if (this.props.isFetching) {
+      return (<h3>Loading...</h3>);
+    } else {
+      return (
         <div style={styles.listResult}>
           <ListResult results={videos}/>
         </div>
-    );
+      );
+    }
   }
 }
 
