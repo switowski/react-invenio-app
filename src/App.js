@@ -14,7 +14,7 @@ import Select from 'material-ui/Select';
 import { MenuItem } from 'material-ui/Menu';
 
 import ResultsContainer from './components/ResultsContainer';
-import SearchForm from './components/SearchForm';
+import SearchFormContainer from './components/SearchFormContainer';
 import CountContainer from './components/CountContainer';
 
 const styles = {
@@ -44,10 +44,6 @@ const styles = {
 };
 
 class App extends Component {
-  submit = values => {
-    // print the form values to the console
-    console.log(values.searchTerm)
-  }
 
   render() {
     return (
@@ -76,7 +72,7 @@ class App extends Component {
         <Grid container spacing={24}>
           <Grid item xs={6} sm={12}>
             <div id="search-form">
-              <SearchForm onSubmit={this.submit} />
+              <SearchFormContainer/>
             </div>
             <div id="react-paginate">
               <ReactPaginate previousLabel={"prev"}

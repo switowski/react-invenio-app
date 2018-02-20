@@ -17,8 +17,8 @@ class Results extends Component {
   }
 
   componentWillMount() {
-    const URL = 'https://videos.cern.ch/api/records/';
-    this.props.search(URL);
+    var _this = this;
+    this.props.search();
   }
 
   render() {

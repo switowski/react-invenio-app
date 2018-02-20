@@ -6,9 +6,14 @@ import TextField from 'material-ui/TextField'
 import SearchIcon from 'material-ui-icons/Search';
 
 let SearchForm = props => {
-  const { handleSubmit } = props
+  const {handleSubmit} = props
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit(values => {
+      console.log('val',values)
+      props.search({
+        q: values.searchTerm
+      });
+      })}>
       <div>
         <TextField name="searchTerm" floatingLabelText="Search CDS" />
         <IconButton>

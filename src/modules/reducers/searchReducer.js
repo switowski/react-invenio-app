@@ -33,15 +33,17 @@ export default (state = initialState, action) => {
     }
 }
 
-export const search = (url) => {
-    console.log(url);
+export const search = (params) => {
+    const URL = 'https://videos.cern.ch/api/records/';
+    console.log(params);
     return dispatch => {
         dispatch({
             type: API_REQUESTED
         })
         dispatch({
             type: SEARCH,
-            payload: axios.get(url)
+            payload: axios.get(URL,
+            {params: params})
         })
     }
 }
