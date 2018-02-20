@@ -11,6 +11,7 @@ import Checkbox from 'material-ui/Checkbox';
 import ReactPaginate from 'react-paginate';
 
 import ResultsContainer from './components/ResultsContainer';
+import SearchForm from './components/SearchForm';
 
 const styles = {
   toolbar: {
@@ -39,6 +40,11 @@ const styles = {
 };
 
 class App extends Component {
+  submit = values => {
+    // print the form values to the console
+    console.log(values.searchTerm)
+  }
+
   render() {
     return (
       <div className="App">
@@ -94,6 +100,7 @@ class App extends Component {
             </div>
           </Grid>
           <Grid item xs={6} sm={10}>
+            <SearchForm onSubmit={this.submit} />
             <ResultsContainer />
           </Grid>
         </Grid>
