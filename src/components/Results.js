@@ -2,6 +2,14 @@ import axios from 'axios';
 import React, { Component } from 'react';
 import ListResult from './ListResult';
 
+
+const styles = {
+  listResult: {
+    backgroundColor: '#fff',
+    margin: '10px'
+  }
+};
+
 class Results extends Component {
 
   constructor(props) {
@@ -36,7 +44,7 @@ class Results extends Component {
       }
     })
     return (
-        <div>
+        <div style={styles.listResult}>
           <ListResult results={videos}/>
         </div>
     );
