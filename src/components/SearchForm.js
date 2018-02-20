@@ -1,6 +1,6 @@
 import React from 'react'
 import IconButton from 'material-ui/IconButton';
-import { Field, reduxForm } from 'redux-form'
+import { reduxForm } from 'redux-form'
 import TextField from 'material-ui/TextField'
 
 import SearchIcon from 'material-ui-icons/Search';

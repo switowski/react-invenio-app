@@ -54,11 +54,22 @@
   color: #fff;
 }
 
-#react-paginate .break a {
+#react-paginate .break-me {
   cursor: default;
 }
 
 #search-form {
   display: inline-block;
   margin-left: 100px;
+}
+
+#sorting-configuration {
+  display: inline-block;
+  margin-left: 50px;
+  padding-top: 20px;
+}
+
+#direction-configuration {
+  display: inline-block;
+  margin-left: 20px;
 }

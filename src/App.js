@@ -9,6 +9,9 @@ import List, { ListItem, ListItemSecondaryAction, ListItemText } from 'material-
 import ListSubheader from 'material-ui/List/ListSubheader';
 import Checkbox from 'material-ui/Checkbox';
 import ReactPaginate from 'react-paginate';
+import { InputLabel } from 'material-ui/Input';
+import Select from 'material-ui/Select';
+import { MenuItem } from 'material-ui/Menu';
 
 import ResultsContainer from './components/ResultsContainer';
 import SearchForm from './components/SearchForm';
@@ -19,7 +22,7 @@ const styles = {
     backgroundColor: 'mediumblue'
   },
   formControl: {
-    marginRight: '10px'
+    marginRight: '10px',
   },
   textField: {
     width: 200
@@ -90,6 +93,45 @@ class App extends Component {
             </div>
             <div id="results-count">
               <CountContainer/>
+            </div>
+            <div id="sorting-configuration">
+              <FormControl className={styles.formControl}>
+                <InputLabel htmlFor="age-simple">Sort</InputLabel>
+                <Select
+                  value={""}
+                  onChange={() => console.log('test)')}
+                  inputProps={{
+                    name: 'sort',
+                    id: 'sort-conf',
+                  }}
+                >
+                  <MenuItem value="">
+                    <em>None</em>
+                  </MenuItem>
+                  <MenuItem value={"bestMatch"}>Best Match</MenuItem>
+                  <MenuItem value={"title"}>Title</MenuItem>
+                  <MenuItem value={"description"}>Description</MenuItem>
+                </Select>
+              </FormControl>
+            </div>
+            <div id="direction-configuration">
+              <FormControl className={styles.formControl}>
+                <InputLabel htmlFor="age-simple">Dir</InputLabel>
+                <Select
+                  value={""}
+                  onChange={() => console.log('test)')}
+                  inputProps={{
+                    name: 'direction',
+                    id: 'direction-conf',
+                  }}
+                >
+                  <MenuItem value="">
+                    <em>None</em>
+                  </MenuItem>
+                  <MenuItem value={"asc"}>ASC</MenuItem>
+                  <MenuItem value={"desc"}>DESC</MenuItem>
+                </Select>
+              </FormControl>
             </div>
           </Grid>
           <Grid item xs={6} sm={2}>
