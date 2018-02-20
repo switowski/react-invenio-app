@@ -8,7 +8,6 @@ import Grid from 'material-ui/Grid';
 import List, { ListItem, ListItemSecondaryAction, ListItemText } from 'material-ui/List';
 import ListSubheader from 'material-ui/List/ListSubheader';
 import Checkbox from 'material-ui/Checkbox';
-import ReactPaginate from 'react-paginate';
 import { InputLabel } from 'material-ui/Input';
 import Select from 'material-ui/Select';
 import { MenuItem } from 'material-ui/Menu';
@@ -16,6 +15,7 @@ import { MenuItem } from 'material-ui/Menu';
 import ResultsContainer from './components/ResultsContainer';
 import SearchFormContainer from './components/SearchFormContainer';
 import CountContainer from './components/CountContainer';
+import PaginationContainer from './components/PaginationContainer';
 
 const styles = {
   toolbar: {
@@ -75,17 +75,7 @@ class App extends Component {
               <SearchFormContainer/>
             </div>
             <div id="react-paginate">
-              <ReactPaginate previousLabel={"prev"}
-                             nextLabel={"next"}
-                             breakLabel={"..."}
-                             breakClassName={"break-me"}
-                             pageCount={10}
-                             marginPagesDisplayed={2}
-                             pageRangeDisplayed={5}
-                             onPageChange={(page) => console.log(page)}
-                             containerClassName={"pagination"}
-                             subContainerClassName={"pages pagination"}
-                             activeClassName={"active"} />
+              <PaginationContainer/>
             </div>
             <div id="results-count">
               <CountContainer/>

@@ -25,6 +25,7 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 results: getResults(action.payload),
+                total: action.payload.data.hits.total,
                 isFetching: false,
                 isFetched: true
             }
