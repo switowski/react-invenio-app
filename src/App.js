@@ -8,6 +8,7 @@ import Grid from 'material-ui/Grid';
 import List, { ListItem, ListItemSecondaryAction, ListItemText } from 'material-ui/List';
 import ListSubheader from 'material-ui/List/ListSubheader';
 import Checkbox from 'material-ui/Checkbox';
+import ReactPaginate from 'react-paginate';
 
 import Results from './components/Results.js';
 
@@ -63,6 +64,21 @@ class App extends Component {
           </Toolbar>
         </AppBar>
         <Grid container spacing={24}>
+          <Grid item xs={6} sm={12}>
+            <div id="react-paginate">
+              <ReactPaginate previousLabel={"previous"}
+                             nextLabel={"next"}
+                             breakLabel={"..."}
+                             breakClassName={"break-me"}
+                             pageCount={10}
+                             marginPagesDisplayed={2}
+                             pageRangeDisplayed={5}
+                             onPageChange={() => console.log('test')}
+                             containerClassName={"pagination"}
+                             subContainerClassName={"pages pagination"}
+                             activeClassName={"active"} />
+            </div>
+          </Grid>
           <Grid item xs={6} sm={2}>
             <div style={styles.root}>
               <List subheader={<ListSubheader component="div">Language</ListSubheader>}>
