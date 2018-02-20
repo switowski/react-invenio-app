@@ -18,6 +18,7 @@ export default (state = initialState, action) => {
         case API_REQUESTED:
             return {
                 ...state,
+                searchParams: {...state.searchParams, ...action.payload},
                 isFetching: true
             }
 
@@ -36,14 +37,16 @@ export default (state = initialState, action) => {
 
 export const search = (params={}) => {
     const URL = 'https://videos.cern.ch/api/records/';
-    return dispatch => {
+    return (dispatch, getState) => {
         dispatch({
-            type: API_REQUESTED
+            type: API_REQUESTED,
+            payload: params
         })
+        console.log(getState())
         dispatch({
             type: SEARCH,
             payload: axios.get(URL,
-            {params: params})
+            {params: getState().search.searchParams})
         })
     }
 }
