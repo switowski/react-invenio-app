@@ -12,6 +12,7 @@ import ReactPaginate from 'react-paginate';
 
 import ResultsContainer from './components/ResultsContainer';
 import SearchForm from './components/SearchForm';
+import CountContainer from './components/CountContainer';
 
 const styles = {
   toolbar: {
@@ -83,6 +84,9 @@ class App extends Component {
                              containerClassName={"pagination"}
                              subContainerClassName={"pages pagination"}
                              activeClassName={"active"} />
+            </div>
+            <div id="results-count">
+              <CountContainer/>
             </div>
           </Grid>
           <Grid item xs={6} sm={2}>

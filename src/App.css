@@ -27,6 +27,10 @@
   to { transform: rotate(360deg); }
 }
 
+#react-paginate, #results-count {
+  display: inline-block;
+}
+
 #react-paginate ul {
   display: inline-block;
   padding-left: 15px;
