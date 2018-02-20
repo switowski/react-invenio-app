@@ -1,11 +1,12 @@
 import axios from 'axios';
 import React, { Component } from 'react';
+import ListResult from './ListResult';
 
 class Results extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { videos: [{}] };
+    this.state = { videos: [] };
   }
 
   componentDidMount() {
@@ -28,15 +29,15 @@ class Results extends Component {
   }
 
   render() {
+    const videos = this.state.videos.map(function (video) {
+      return {
+        description: video.metadata.description,
+        title: video.metadata.title.title
+      }
+    })
     return (
         <div>
-          {this.state.videos.map(function(video) {
-            return (
-              <div>
-                {video.id}
-              </div>
-            );
-          })}
+          <ListResult results={videos}/>
         </div>
     );
   }
