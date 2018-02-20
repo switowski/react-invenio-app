@@ -6,6 +6,7 @@ import Button from 'material-ui/Button';
 import { FormControl } from 'material-ui/Form';
 import Grid from 'material-ui/Grid';
 
+import Results from './components/Results.js';
 
 const styles = {
   formControl: {
@@ -47,6 +48,7 @@ class App extends Component {
             </Grid>
           </Toolbar>
         </AppBar>
+        <Results />
       </div>
     );
   }
