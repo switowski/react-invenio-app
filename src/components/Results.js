@@ -1,6 +1,6 @@
-import axios from 'axios';
 import React, { Component } from 'react';
 import ListResult from './ListResult';
+import axios from 'axios';
 
 
 const styles = {
@@ -14,30 +14,30 @@ class Results extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { videos: [] };
+    this.state = { results: [] };
   }
 
-  componentDidMount() {
+  componentWillMount() {
     var _this = this;
     const URL = 'https://videos.cern.ch/api/records/';
-
+    this.props.search(URL);
     // ?sort=bestmatch&q=higg&page=1&size=21
-    this.serverRequest =
-      axios
-        .get(URL)
-        .then(function(result) {
-          _this.setState({
-            videos: result.data.hits.hits
-          });
-        })
+    // this.serverRequest =
+    //   axios
+    //     .get(URL)
+    //     .then(function(result) {
+    //       _this.setState({
+    //         videos: result.data.hits.hits
+    //       });
+    //     })
   }
 
   componentWillUnmount() {
-    this.serverRequest.abort();
+    //this.serverRequest.abort();
   }
 
   render() {
-    const videos = this.state.videos.map(function (video) {
+    const videos = this.props.results.map(function (video) {
       return {
         description: video.metadata.description,
         title: video.metadata.title.title

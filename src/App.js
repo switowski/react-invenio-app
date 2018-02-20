@@ -10,7 +10,7 @@ import ListSubheader from 'material-ui/List/ListSubheader';
 import Checkbox from 'material-ui/Checkbox';
 import ReactPaginate from 'react-paginate';
 
-import Results from './components/Results.js';
+import ResultsContainer from './components/ResultsContainer';
 
 const styles = {
   toolbar: {
@@ -94,7 +94,7 @@ class App extends Component {
             </div>
           </Grid>
           <Grid item xs={6} sm={10}>
-            <Results />
+            <ResultsContainer />
           </Grid>
         </Grid>
       </div>
