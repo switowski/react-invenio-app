@@ -57,3 +57,8 @@
 #react-paginate .break a {
   cursor: default;
 }
+
+#search-form {
+  display: inline-block;
+  margin-left: 100px;
+}

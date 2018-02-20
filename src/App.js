@@ -72,6 +72,9 @@ class App extends Component {
         </AppBar>
         <Grid container spacing={24}>
           <Grid item xs={6} sm={12}>
+            <div id="search-form">
+              <SearchForm onSubmit={this.submit} />
+            </div>
             <div id="react-paginate">
               <ReactPaginate previousLabel={"previous"}
                              nextLabel={"next"}
@@ -104,7 +107,6 @@ class App extends Component {
             </div>
           </Grid>
           <Grid item xs={6} sm={10}>
-            <SearchForm onSubmit={this.submit} />
             <ResultsContainer />
           </Grid>
         </Grid>
