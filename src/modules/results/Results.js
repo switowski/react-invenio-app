@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ListResult from './ListResult';
+import ListResult from '../../components/ListResult';
 
 
 const styles = {

@@ -42,7 +42,6 @@ export const search = (params={}) => {
             type: API_REQUESTED,
             payload: params
         })
-        console.log(getState())
         dispatch({
             type: SEARCH,
             payload: axios.get(URL,

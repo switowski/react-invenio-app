@@ -12,10 +12,10 @@ import { InputLabel } from 'material-ui/Input';
 import Select from 'material-ui/Select';
 import { MenuItem } from 'material-ui/Menu';
 
-import ResultsContainer from './components/ResultsContainer';
-import SearchFormContainer from './components/SearchFormContainer';
-import CountContainer from './components/CountContainer';
-import PaginationContainer from './components/PaginationContainer';
+import ResultsContainer from './modules/results/ResultsContainer';
+import SearchFormContainer from './modules/search/SearchFormContainer';
+import CountContainer from './modules/count/CountContainer';
+import PaginationContainer from './modules/pagination/PaginationContainer';
 
 const styles = {
   toolbar: {
